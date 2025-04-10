@@ -12,9 +12,10 @@ public class Students implements Comparable<Students> {
 	private Course course;
 	private double fees;
 	private boolean confirm_admission;
+	private LocalDate last_installment_PaidDate;
 	
 	public Students(String prnNo, String firstName, String lastName,String email, String password, LocalDate dob, Course course, double fees,
-			boolean confirm_admission) {
+			boolean confirm_admission, LocalDate last_installment_PaidDate) {
 		super();
 		this.prnNo = prnNo;
 		this.firstName = firstName;
@@ -25,6 +26,7 @@ public class Students implements Comparable<Students> {
 		this.course = course;
 		this.fees = fees;
 		this.confirm_admission = confirm_admission;
+		this.last_installment_PaidDate = last_installment_PaidDate;
 	}
 
 	
@@ -33,12 +35,22 @@ public class Students implements Comparable<Students> {
 	}
 
 	
+	public LocalDate getLast_installment_PaidDate() {
+		return last_installment_PaidDate;
+	}
+
+
+	public void setLast_installment_PaidDate(LocalDate last_installment_PaidDate) {
+		this.last_installment_PaidDate = last_installment_PaidDate;
+	}
+
 
 	@Override
 	public String toString() {
 		return "Students [prnNo=" + prnNo + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", password=" + password + ", dob=" + dob + ", course=" + course + ", fees=" + fees
-				+ ", confirm_admission=" + confirm_admission + "]";
+				+ ", confirm_admission=" + confirm_admission + ", last_installment_PaidDate="
+				+ last_installment_PaidDate + "]";
 	}
 
 

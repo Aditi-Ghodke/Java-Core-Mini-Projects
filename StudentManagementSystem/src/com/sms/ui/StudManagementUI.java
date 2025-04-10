@@ -21,6 +21,9 @@ public class StudManagementUI {
 						+ "6. Sort by email \n"
 						+ "7. Sort by dob \n"
 						+ "8. Unsubscribe \n"
+						+ "9. Sort by Name and dob \n"
+						+ "10. Students who have not paid fees for 1 month \n"
+						+ "11. Remove students who have not paid fees for 4 months \n"
 						+ "0. Exit"
 					);
 				System.out.println("Enter your choice!");
@@ -29,7 +32,8 @@ public class StudManagementUI {
 				case 1:
 					System.out.println("Enter Student's prno, first name, last name,"
 							+ "email, dob, course, fees, confirm admission");
-					ops.addStudents(sc.next(), sc.next(), sc.next(), sc.next(),sc.next(), sc.next(), sc.next(), sc.nextDouble(), sc.nextBoolean());
+					ops.addStudents(sc.next(), sc.next(), sc.next(), sc.next(),
+							sc.next(), sc.next(), sc.next(), sc.nextDouble(), sc.nextBoolean(), sc.next());
 					break;
 				case 2:
 					System.out.println("Enter your email and password");
@@ -57,6 +61,16 @@ public class StudManagementUI {
 				case 8:
 					System.out.println("Enter your emil to unsubscribe");
 					ops.unsubscribe(sc.next());
+					break;
+				case 9:
+					ops.sortByDobName();
+				break;
+				case 10:
+					ops.feesNotPaidForOneMonth();
+					break;
+				case 11:
+					ops.feesNotPaidForFourMonths();
+					System.out.println("Students removed successfully!");
 					break;
 				case 0:
 					exit = true;

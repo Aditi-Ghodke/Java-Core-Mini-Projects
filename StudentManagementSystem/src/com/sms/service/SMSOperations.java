@@ -8,7 +8,7 @@ import com.sms.customexception.SMSException;
 
 public interface SMSOperations {
 	void addStudents(String prnNo, String firstName, String lastName,String email,String password, String dob, String course, double fees,
-			boolean confirm_admission) throws SMSException;
+			boolean confirm_admission, String last_installment_PaidDate) throws SMSException;
 	
 	//sign in
 	public Students authenticate(String email, String password) throws SMSException;
@@ -27,4 +27,13 @@ public interface SMSOperations {
 	
 	//Unsubscribe
 	public void unsubscribe(String email);
+	
+	//sort by dob and first name
+	public void sortByDobName();
+	
+	//Students who have not paid the fees for last one month
+	public void feesNotPaidForOneMonth() ;
+	
+	//remove students whose fees is pending for 4 months
+	public void feesNotPaidForFourMonths();
 }
